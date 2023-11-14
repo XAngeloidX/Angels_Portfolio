@@ -1,6 +1,7 @@
 html {
   height: 100%;
   background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  scroll-behavior: smooth;
 }
 
 #stars {
@@ -70,6 +71,22 @@ html {
   margin-bottom: 50px;
 }
 
+.title-content {
+  display: inline-block;
+}
+
+.scroll-down {
+  display: block;
+  margin-top: 10px;
+}
+
+#title span {
+  display: block;
+  background: -webkit-linear-gradient(white, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 #about {
   position: absolute;
   top: calc(100% + 60px); /*This makes it appear below the title above*/
@@ -82,14 +99,14 @@ html {
   flex-wrap: wrap;
   justify-content: space-around;
   position: absolute;
-  top: calc(130% + 50px);
+  top: calc(130% + 50px); /*This makes it appear below the about above*/
   left: 0;
   right: 0;
 }
 
 #contact {
   position: absolute;
-  top: calc(200% + 50px);
+  top: calc(200% + 50px); /*This makes it appear below the features above*/
   left: 0;
   right: 0;
   display: flex;
@@ -110,13 +127,109 @@ html {
   margin-right: 10%;
 }
 
+.header {
+  margin: 0 7%;
+  font-family: "lato", sans-serif;
+  color: #FFF;
+  background: -webkit-linear-gradient(white, #e0e0e0);
+  -webkit-background-clip: text;
+  position: relative;
+  z-index: 2;
+}
+
+#features .header {
+  margin: 0 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#features button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-left: -10%;
+  height: 40px;
+  color: purple !important;
+  background: transparent;
+  position: relative;
+  right: 1%;
+  z-index: 3;
+}
+
+#features .Github {
+  position: absolute;
+  left: 1%;
+  right: 5%;
+  width: 5%;
+  background-color: transparent;
+  background: transparent !important;
+  font-size: 24px;
+}
+
+.header::after {
+  content: attr(data-text);
+  position: absolute;
+  font-size: 16px;
+  top: -2;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  color: #FFF;
+  pointer-events: none;
+}
+
 #features .header {
   position: relative;
   justify-content: center;
   align-items: center;
-
   font-size: 24px;
   color: white;
+}
+
+.feature-cards .card .info > a:first-child {
+  align-items: center;
+  margin: 0  auto;
+  width: 100%;
+}
+
+.feature-cards .card .info h1 {
+  margin: 0;
+}
+
+#contact .header{
+  margin: 0 7%;
+  font-family: "lato", sans-serif;
+  color: #FFF;
+  background: -webkit-linear-gradient(white, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+#contact .header::after {
+  content: attr(data-text);
+  position: absolute;
+  font-size: 16px;
+  top: -2;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  color: #FFF;
+  background: -webkit-linear-gradient(black, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+}
+
+#contact .header button {
+  background-color: #1B2735;
+  background: -webkit-linear-gradient(white, #38495a);
+  position: relative;
+  z-index: 1;
 }
 
 .AboutCard {
@@ -154,16 +267,29 @@ html {
   margin-right: 10px;
 }
 
-img {
-  
-  width: 100%;
+.info {
+  margin: 0 7%;
 }
 
-#title span {
-  background: -webkit-linear-gradient(white, #38495a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+img {
+  background-color: transparent;
+  width: 100%;
+  border-style: none;
+  border-width: 0;
 }
+
+.scroll-top {
+  width: 3%;
+  margin: 0 7%;
+  background-color: transparent;
+  position: relative;
+  top: calc(200% + 50px);
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
 
 @keyframes animStar {
   from {
